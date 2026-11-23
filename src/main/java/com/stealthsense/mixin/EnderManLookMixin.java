@@ -2,7 +2,7 @@ package com.stealthsense.mixin;
 
 import com.stealthsense.config.MobDetectionProfile;
 import com.stealthsense.config.StealthConfig;
-import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.ender.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
