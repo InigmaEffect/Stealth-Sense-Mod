@@ -2,7 +2,7 @@ package com.stealthsense.mixin;
 
 import com.stealthsense.config.MobDetectionProfile;
 import com.stealthsense.config.StealthConfig;
-import net.minecraft.world.entity.monster.ender.EnderMan;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,13 +10,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(EnderMan.class)
+@Mixin(targets = "net.minecraft.world.entity.monster.enderman.EnderMan")
 public class EnderManLookMixin {
 
     @Inject(method = "isLookingAtMe", at = @At("HEAD"), cancellable = true)
     private void stealthsense$longRangeEndermanGaze(Player player, CallbackInfoReturnable<Boolean> cir) {
         if (!StealthConfig.INSTANCE.modEnabled) return;
-        EnderMan self = (EnderMan) (Object) this;
+        LivingEntity self = (LivingEntity) (Object) this;
         MobDetectionProfile profile = StealthConfig.getProfile(self);
 
         Vec3 playerLook = player.getViewVector(1.0F).normalize();
