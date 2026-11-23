@@ -14,7 +14,7 @@ public class StealthSenseMod implements ModInitializer {
     @Override
     public void onInitialize() {
         StealthConfig.load();
-        ServerTickEvents.END_WORLD_TICK.register(DetectionEngine::tickWorld);
+        ServerTickEvents.END_LEVEL_TICK.register(DetectionEngine::tickWorld);
         LOGGER.info("StealthSense v0.1.0 initialized for Minecraft 26.3!");
     }
 }
