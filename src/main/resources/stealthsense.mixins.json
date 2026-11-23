@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.stealthsense.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "TargetingConditionsMixin",
+    "LivingEntityHurtMixin",
+    "EnderManLookMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

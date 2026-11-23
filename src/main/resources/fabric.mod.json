@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "stealthsense",
+  "version": "${version}",
+  "name": "StealthSense - Realistic Mob Detection",
+  "description": "Realistic FOV, distance, clarity, speed-blur, and intelligence-based mob detection with an in-game # tuner menu.",
+  "authors": ["InigmaEffect"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.stealthsense.StealthSenseMod"
+    ],
+    "client": [
+      "com.stealthsense.client.StealthSenseClient"
+    ]
+  },
+  "mixins": [
+    "stealthsense.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
