@@ -226,7 +226,7 @@ public class DetectionEngine {
 
     private static void sendDebug(LivingEntity target, Mob observer, String msg) {
         if (StealthConfig.INSTANCE.showDebugActionbar && target instanceof ServerPlayer sp) {
-            sp.displayClientMessage(Component.literal("§7[StealthSense] §e" + observer.getName().getString() + "§7: §f" + msg), true);
+            sp.sendSystemMessage(Component.literal("§7[StealthSense] §e" + observer.getName().getString() + "§7: §f" + msg), true);
         }
     }
 }
